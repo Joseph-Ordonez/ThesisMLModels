@@ -13,7 +13,7 @@ print(df.head())
 #Independent variable
 X = df[["MatematicaI", "MatematicaII", "ComunicacionI", "ComunicacionII", 
         "InglesI", "InglesII", "DesarrolloPersonal", "Historia", 
-        "ArteyCultura", "Quimica", "Biologia", "Fisica", "Emprendimiento", 
+        "ArteyCultura", "Quimica", "Biologia", "Fisica", "EmprendimientoI", "EmprendimientoII",
         "KuderA1", "KuderA2", "KuderA3", "KuderA4", "KuderA5", "KuderA6", 
         "KuderB1", "KuderB2", "KuderB3", "KuderB4", "KuderB5", "KuderB6", 
         "KuderC1", "KuderC2", "KuderC3", "KuderC4", "KuderC5", "KuderC6", 
