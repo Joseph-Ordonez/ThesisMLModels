@@ -2,11 +2,11 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 
-#Create App
+#Creacion de la aplicacion
 app = Flask(__name__)
 
-#Pickle model load
-model = pickle.load(open("model.pkl", "rb"))
+#Carga del modelo entrenado
+model = pickle.load(open("adjusted_model.pkl", "rb"))
 
 @app.route("/")
 def Home():

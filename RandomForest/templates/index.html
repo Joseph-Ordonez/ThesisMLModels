@@ -20,115 +20,53 @@
 
 <body>
  <div>
-	<h1>Recommendation with Random Forest Model</h1>
+	<h1>Random Forest Model</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-        <h2>Cours Grades</h2>
-    	<input type="number" step="1" min="0" max="20" name="MatematicaI" placeholder="MatematicaI" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="MatematicaII" placeholder="MatematicaII" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="ComunicacionI" placeholder="ComunicacionI" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="ComunicacionII" placeholder="ComunicacionII" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="InglesI" placeholder="InglesI" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="InglesII" placeholder="InglesII" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="DesarrolloPersonal" placeholder="DesarrolloPersonal" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="Historia" placeholder="Historia" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="ArteyCultura" placeholder="ArteyCultura" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="Quimica" placeholder="Quimica" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="Biologia" placeholder="Biologia" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="Fisica" placeholder="Fisica" required="required"/>
-    	<input type="number" step="1" min="0" max="20" name="Emprendimiento" placeholder="Emprendimiento" required="required"/>
+        <h2>Course Grades</h2>
+    	<input type="number" step="1" min="0" max="20" name="ARTE_CULTURA_E_IDENTIDAD_LOCAL_Y_REGIONAL" placeholder="ARTE_CULTURA_E_IDENTIDAD_LOCAL_Y_REGIONAL" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="COMUNICACION_Y_RAZONAMIENTO_VERBAL" placeholder="COMUNICACION_Y_RAZONAMIENTO_VERBAL" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="DESARROLLO_PERSONAL_CIUDADANIA_Y_CIVISMO" placeholder="DESARROLLO_PERSONAL_CIUDADANIA_Y_CIVISMO" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="EMPRENDIMIENTO" placeholder="EMPRENDIMIENTO" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="INGLES" placeholder="INGLES" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="MATEMATICA_Y_RAZONAMIENTO_MATEMATICO" placeholder="MATEMATICA_Y_RAZONAMIENTO_MATEMATICO" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="QUIMICA" placeholder="QUIMICA" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="BIOLOGIA" placeholder="BIOLOGIA" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="FISICA" placeholder="FISICA" required="required"/>
+    	<input type="number" step="1" min="0" max="20" name="HISTORIA_UNIVERSAL_NACIONAL_REGIONAL_Y_LOCAL" placeholder="HISTORIA_UNIVERSAL_NACIONAL_REGIONAL_Y_LOCAL" required="required"/>
 
-        <h2>Kuder Test Questions</h2>
+        <h2>Kuder Test</h2>
         <h3>Area A</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderA1" placeholder="KuderA1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderA2" placeholder="KuderA2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderA3" placeholder="KuderA3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderA4" placeholder="KuderA4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderA5" placeholder="KuderA5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderA6" placeholder="KuderA6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="AIRE_LIBRE" placeholder="AIRE_LIBRE" required="required"/>
         <h3>Area B</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderB1" placeholder="KuderB1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderB2" placeholder="KuderB2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderB3" placeholder="KuderB3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderB4" placeholder="KuderB4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderB5" placeholder="KuderB5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderB6" placeholder="KuderB6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="MECANICO" placeholder="MECANICO" required="required"/>
         <h3>Area C</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderC1" placeholder="KuderC1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderC2" placeholder="KuderC2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderC3" placeholder="KuderC3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderC4" placeholder="KuderC4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderC5" placeholder="KuderC5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderC6" placeholder="KuderC6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="CALCULO" placeholder="CALCULO" required="required"/>
         <h3>Area D</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderD1" placeholder="KuderD1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderD2" placeholder="KuderD2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderD3" placeholder="KuderD3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderD4" placeholder="KuderD4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderD5" placeholder="KuderD5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderD6" placeholder="KuderD6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="CIENTIFICO" placeholder="CIENTIFICO" required="required"/>
         <h3>Area E</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderE1" placeholder="KuderE1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderE2" placeholder="KuderE2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderE3" placeholder="KuderE3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderE4" placeholder="KuderE4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderE5" placeholder="KuderE5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderE6" placeholder="KuderE6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="PERSUASIVO" placeholder="PERSUASIVO" required="required"/>
         <h3>Area F</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderF1" placeholder="KuderF1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderF2" placeholder="KuderF2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderF3" placeholder="KuderF3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderF4" placeholder="KuderF4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderF5" placeholder="KuderF5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderF6" placeholder="KuderF6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="ARTISTICO_PLASTICO" placeholder="ARTISTICO_PLASTICO" required="required"/>
         <h3>Area G</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderG1" placeholder="KuderG1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderG2" placeholder="KuderG2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderG3" placeholder="KuderG3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderG4" placeholder="KuderG4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderG5" placeholder="KuderG5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderG6" placeholder="KuderG6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="LITERARIO" placeholder="LITERARIO" required="required"/>
         <h3>Area H</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderH1" placeholder="KuderH1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderH2" placeholder="KuderH2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderH3" placeholder="KuderH3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderH4" placeholder="KuderH4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderH5" placeholder="KuderH5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderH6" placeholder="KuderH6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="MUSICAL" placeholder="MUSICAL" required="required"/>
         <h3>Area I</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderI1" placeholder="KuderI1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderI2" placeholder="KuderI2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderI3" placeholder="KuderI3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderI4" placeholder="KuderI4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderI5" placeholder="KuderI5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderI6" placeholder="KuderI6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="SERVICIO_SOCIAL" placeholder="SERVICIO_SOCIAL" required="required"/>
         <h3>Area J</h3>
-    	<input type="number" step="1" min="1" max="5" name="KuderJ1" placeholder="KuderJ1" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderJ2" placeholder="KuderJ2" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderJ3" placeholder="KuderJ3" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderJ4" placeholder="KuderJ4" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderJ5" placeholder="KuderJ5" required="required"/>
-    	<input type="number" step="1" min="1" max="5" name="KuderJ6" placeholder="KuderJ6" required="required"/>
+    	<input type="number" step="1" min="6" max="30" name="OFICINA" placeholder="OFICINA" required="required"/>
 
-        <h2>CAPS Test Questions</h2>
+        <h2>CAPS Test</h2>
         <h3>Enneatypes</h3>
-        <input type="number" step="1" min="1" max="9" name="1MRE" placeholder="1MRE" required="required"/>
-        <input type="number" step="1" min="1" max="9" name="2SRE" placeholder="2SRE" required="required"/>
-        <input type="number" step="1" min="1" max="9" name="3VRE" placeholder="3VRE" required="required"/>
-        <input type="number" step="1" min="1" max="9" name="4NAE" placeholder="4NAE" required="required"/>
-        <input type="number" step="1" min="1" max="9" name="5LUE" placeholder="5LUE" required="required"/>
-        <input type="number" step="1" min="1" max="9" name="6WKE" placeholder="6WKE" required="required"/>
-        <input type="number" step="1" min="1" max="9" name="7PSAE" placeholder="7PSAE" required="required"/>
-
-        <h3>Percentiles</h3>
-        <input type="number" step="1" min="1" max="100" name="1MRP" placeholder="1MRP" required="required"/>
-        <input type="number" step="1" min="1" max="100" name="2SRP" placeholder="2SRP" required="required"/>
-        <input type="number" step="1" min="1" max="100" name="3VRP" placeholder="3VRP" required="required"/>
-        <input type="number" step="1" min="1" max="100" name="4NAP" placeholder="4NAP" required="required"/>
-        <input type="number" step="1" min="1" max="100" name="5LUP" placeholder="5LUP" required="required"/>
-        <input type="number" step="1" min="1" max="100" name="6WKP" placeholder="6WKP" required="required"/>
-        <input type="number" step="1" min="1" max="100" name="7PSAP" placeholder="7PSAP" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="1MR" placeholder="1MR" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="2SR" placeholder="2SR" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="3VR" placeholder="3VR" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="4NA" placeholder="4NA" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="5LU" placeholder="5LU" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="6WK" placeholder="6WK" required="required"/>
+        <input type="number" step="1" min="1" max="9" name="7PSA" placeholder="7PSA" required="required"/>
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Request</button>
     </form>
